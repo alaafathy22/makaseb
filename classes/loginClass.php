@@ -10,8 +10,13 @@ class loginPage extends mainClass
             $result = $stmt->execute();
             $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
             $result = $stmt->fetchAll();
-            if ($this->checkPasswordBeforeSetSession($result, $password)) {
-                $this->setSession($result);
+            if ($result) {
+                if ($this->checkPasswordBeforeSetSession($result, $password)) {
+                    $this->setSession($result);
+                }
+            } else {
+                $messageErrorLogin = 'Error . Please review the information';
+                header('Location: index.php?messageErrorLogin=' . $messageErrorLogin);
             }
         }
     }
