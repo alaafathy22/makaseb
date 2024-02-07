@@ -23,8 +23,6 @@ if ($_SESSION['logged'] != 1) {
     include 'modalLogout.php';
     ?>
 </div>
-
-
 <?php
 require_once './footerStyles.php';
 ?>
