@@ -26,10 +26,21 @@ abstract class mainClass implements mainRood
                 $_SESSION['idUser'] = $value['id'];
                 $_SESSION['logged'] = 1;
             }
-            header('Location: dashboard');
+            header('Location: dashboard.php');
         } else {
             $messageErrorLogin = 'Error . Please review the information';
             header('Location: index.php?messageErrorLogin=' . $messageErrorLogin);
+        }
+    }
+
+    final function logOut()
+    {
+        if (isset($_POST['logout'])) {
+            // remove all session variables
+            session_unset();
+            // destroy the session
+            session_destroy();
+            header('Location: index.php');
         }
     }
 }

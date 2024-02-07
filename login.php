@@ -8,7 +8,7 @@ $connectedClass->actionLoginPage(@$_POST['email'],@$_POST['password']);
     <div class="container-login100">
         <div class="wrap-login100">
             <div class="login100-pic js-tilt" data-tilt>
-                <img src="./web/login_Page/images/img-01.png" alt="IMG">
+                <img src="./filesForStyle/login_Page/images/img-01.png" alt="IMG">
             </div>
             <form class="login100-form validate-form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                 <span class="login100-form-title">
